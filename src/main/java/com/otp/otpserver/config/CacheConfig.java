@@ -2,6 +2,7 @@ package com.otp.otpserver.config;
 
 
 import com.github.benmanes.caffeine.cache.Caffeine;
+import com.otp.otpserver.model.RegisterRequestDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
@@ -32,5 +33,9 @@ public class CacheConfig {
     @Bean( "AuthenticationList")
     public Map<String, String> getAuthList() {
         return   new HashMap<String, String>();
+    }
+    @Bean( "RegisteredList")
+    public Map<String, RegisterRequestDto> getRegisteredList() {
+        return   new HashMap<String, RegisterRequestDto>();
     }
 }

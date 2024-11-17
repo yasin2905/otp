@@ -33,6 +33,17 @@ public class OtpController {
     }
 
     @CrossOrigin(origins = "*")
+    @PostMapping(path = "/register")
+    public RegisterResponseDto register(
+            HttpServletRequest httpServletRequest,
+            @RequestBody RegisterRequestDto request,
+            @RequestHeader Map<String, String> headers
+    ) {
+
+        return userService.registerUser(request);
+    }
+
+    @CrossOrigin(origins = "*")
     @PostMapping(path = "/confirm-otp")
     public ConfirmResponseDto confirm(
             HttpServletRequest httpServletRequest,
@@ -80,6 +91,7 @@ public class OtpController {
 
         return userService.authenticationGenerateGrant(request);
     }
+
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/reject-access")
     public AuthResponseDto rejectAccess(
@@ -103,7 +115,6 @@ public class OtpController {
 
         return userService.authRequestFetchStatus(request);
     }
-
 
 
 }

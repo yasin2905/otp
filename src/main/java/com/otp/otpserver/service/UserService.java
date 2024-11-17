@@ -15,10 +15,12 @@ public class UserService {
 
     private final OtpService otpService;
     private final Map<String, String> authenticationList;
+    private final Map<String, RegisterRequestDto> registeredUsers;
 
-    public UserService(OtpService otpService, @Qualifier("AuthenticationList") Map<String, String> authenticationList) {
+    public UserService(OtpService otpService, @Qualifier("AuthenticationList") Map<String, String> authenticationList,@Qualifier("RegisteredList") Map<String, RegisterRequestDto> registeredUsers) {
         this.otpService = otpService;
         this.authenticationList = authenticationList;
+        this.registeredUsers = registeredUsers;
     }
 
     public OtpResponseDto generateOtp(OtpRequestDto requestDto) {
@@ -32,6 +34,25 @@ public class UserService {
 //                .withGeneratedDateTime(LocalDateTime.now())
                 .withExpiredDateTime(otp.split(";")[1])
                 .newInstance();
+
+    }
+    public RegisterResponseDto registerUser(RegisterRequestDto requestDto) {
+
+        RegisterRequestDto registerRequestDto = registeredUsers.get(requestDto.getUsername());
+        if (registerRequestDto!=null){
+            registeredUsers.put(requestDto.getUsername(),registerRequestDto);
+            return RegisterResponseDto.builder()
+                    .withUserId(requestDto.getUsername())
+                    .withRegistered(true)
+                    .newInstance();
+        }else{
+            return RegisterResponseDto.builder()
+                    .withUserId(requestDto.getUsername())
+                    .withRegistered(false)
+                    .newInstance();
+        }
+
+
 
     }
 
