@@ -21,6 +21,8 @@ public class AuthResponseDto implements  Serializable {
     boolean authResult;
     boolean granted;
     boolean inProgress=true;
+    boolean isRegistered;
+    boolean rejected=false;
 
 
 

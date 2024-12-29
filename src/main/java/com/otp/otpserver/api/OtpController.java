@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "")
 public class OtpController {
 
 
@@ -22,17 +22,6 @@ public class OtpController {
 
 
     @CrossOrigin(origins = "*")
-    @PostMapping(path = "/generate-otp")
-    public OtpResponseDto generate(
-            HttpServletRequest httpServletRequest,
-            @RequestBody OtpRequestDto request,
-            @RequestHeader Map<String, String> headers
-    ) {
-
-        return userService.generateOtp(request);
-    }
-
-    @CrossOrigin(origins = "*")
     @PostMapping(path = "/register")
     public RegisterResponseDto register(
             HttpServletRequest httpServletRequest,
@@ -41,6 +30,17 @@ public class OtpController {
     ) {
 
         return userService.registerUser(request);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/generate-otp")
+    public OtpResponseDto generate(
+            HttpServletRequest httpServletRequest,
+            @RequestBody OtpRequestDto request,
+            @RequestHeader Map<String, String> headers
+    ) {
+
+        return userService.generateOtp(request);
     }
 
     @CrossOrigin(origins = "*")
@@ -113,7 +113,19 @@ public class OtpController {
             @RequestHeader Map<String, String> headers
     ) {
 
-        return userService.authRequestFetchStatus(request);
+        return userService.authRequestFetchGrant(request);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "")
+    public WallixAuthResponseDto wallixAuth(
+            HttpServletRequest httpServletRequest,
+            @RequestBody WallixAuthRequestDto request,
+
+            @RequestHeader Map<String, String> headers
+    ) {
+
+        return userService.wallixAuth(request);
     }
 
 

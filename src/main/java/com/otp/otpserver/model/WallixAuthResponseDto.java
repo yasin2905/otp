@@ -13,13 +13,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder(buildMethodName = "newInstance", setterPrefix = "with")
-public class RegisterRequestDto implements  Serializable {
+public class WallixAuthResponseDto implements  Serializable {
 
-    String firstName;
-    String lastName;
-    String userName;
-    String cellphoneNumber;
-    String address;
+    boolean success;
+    WallixAuthResponseUserInfoDto user_info;
 
 
 }
