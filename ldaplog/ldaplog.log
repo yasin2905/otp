@@ -1,0 +1,322 @@
+// Time:  Wed Dec 25 10:13:03 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 1
+SearchRequest conn0Msg1SearchRequest = new SearchRequest(
+     "", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.SEARCHING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectclass"),
+     "1.1"); // Requested Attributes
+conn0Msg1SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg1SearchResult;
+try
+{
+  conn0Msg1SearchResult = connection.search(conn0Msg1SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg1SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg1SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:26 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 2
+SearchRequest conn0Msg2SearchRequest = new SearchRequest(
+     "", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.SEARCHING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectClass"),
+     "subschemaSubentry"); // Requested Attributes
+conn0Msg2SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg2SearchResult;
+try
+{
+  conn0Msg2SearchResult = connection.search(conn0Msg2SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg2SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg2SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:29 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 3
+SearchRequest conn0Msg3SearchRequest = new SearchRequest(
+     "cn=schema", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.SEARCHING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectClass"),
+     "attributeTypes", // Requested Attributes
+     "objectClasses",
+     "matchingRules",
+     "ldapSyntaxes",
+     "*");
+conn0Msg3SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg3SearchResult;
+try
+{
+  conn0Msg3SearchResult = connection.search(conn0Msg3SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg3SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg3SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:30 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 4
+SearchRequest conn0Msg4SearchRequest = new SearchRequest(
+     "", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.SEARCHING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectClass"),
+     "namingContexts"); // Requested Attributes
+conn0Msg4SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg4SearchResult;
+try
+{
+  conn0Msg4SearchResult = connection.search(conn0Msg4SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg4SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg4SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:34 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 5
+SearchRequest conn0Msg5SearchRequest = new SearchRequest(
+     "dc=example,dc=com,rdn=org", // Base DN
+     SearchScope.ONE, // Scope
+     DereferencePolicy.FINDING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectclass"),
+     "objectclass"); // Requested Attributes
+conn0Msg5SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg5SearchResult;
+try
+{
+  conn0Msg5SearchResult = connection.search(conn0Msg5SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg5SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg5SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:37 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 6
+SearchRequest conn0Msg6SearchRequest = new SearchRequest(
+     "dc=example,dc=com,rdn=org", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.FINDING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectClass"));
+conn0Msg6SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg6SearchResult;
+try
+{
+  conn0Msg6SearchResult = connection.search(conn0Msg6SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg6SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg6SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
+
+
+// Time:  Wed Dec 25 10:13:40 IRST 2024
+// Client Address: 127.0.0.1:45426
+// Server Address: 127.0.0.1:389
+// Connection ID: 0
+// Message ID: 7
+SearchRequest conn0Msg7SearchRequest = new SearchRequest(
+     "dc=example,dc=com,rdn=org", // Base DN
+     SearchScope.BASE, // Scope
+     DereferencePolicy.FINDING, // Alias Dereference Policy
+     0, // Size Limit
+     0, // Time Limit
+     false, // Types Only
+     Filter.createPresenceFilter( // Filter
+          "objectClass"));
+conn0Msg7SearchRequest.addControl(
+     new Control(
+          "2.16.840.1.113730.3.4.2",
+          false));
+
+SearchResult conn0Msg7SearchResult;
+try
+{
+  conn0Msg7SearchResult = connection.search(conn0Msg7SearchRequest);
+  // The search was processed successfully.
+}
+catch (LDAPSearchException e)
+{
+  // The search failed.  Maybe the following will help explain why.
+  ResultCode resultCode = e.getResultCode();
+  String message = e.getMessage();
+  String matchedDN = e.getMatchedDN();
+  String[] referralURLs = e.getReferralURLs();
+  Control[] responseControls = e.getResponseControls();
+
+  // Even though there was an error, we may have gotten some results.
+  conn0Msg7SearchResult = e.getSearchResult();
+}
+
+// If there were results, then process them.
+for (SearchResultEntry e : conn0Msg7SearchResult.getSearchEntries())
+{
+  // Do something with the entry.
+}
